@@ -1,0 +1,172 @@
+﻿@model Pagamento.Controllers.PagamentoController
+@{
+
+    ViewData["Title"] = "Pagamento";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <script src="https://kit.fontawesome.com/a076d053399.js"></script>
+
+</head>
+
+<style>
+    body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .Pagamento {
+        background-color: transparent;
+        position: absolute;
+        top: 13%;
+        left: 32%;
+        padding: 50px;
+        border-radius: 15px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #7C59B9;
+    }
+
+    button {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #8100ff;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        color: black;
+        font-size: 15px;
+    }
+
+        button:hover {
+            background-color: #B389FC;
+            cursor: pointer;
+        }
+
+    select {
+        border-width: 2px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 5px;
+    }
+
+    textarea {
+        border-width: 2px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 5px;
+    }
+
+    input {
+        border-width: 2px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 5px;
+    }
+
+    .txtDinheiro {
+        font-size: 15px;
+        width: 300px;
+    }
+
+   .TpPagamento{
+       font-size: 5px;
+       width: 100px;
+   }
+</style>
+
+
+
+<body>
+    <div class="Pagamento">
+
+        <p>Lista dos produtos:</p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>Receber em: </p>
+
+        <br />
+        <br />
+        <h6>Valor do frete: R$10,00</h6>
+        <h5>Total: </h5>
+        <br />
+
+        <h5>Selecione uma forma de pagamento</h5>
+        <form action="~/Home" method="post">
+
+            <div class="TpPagamento" name="TpPagamento">
+                <button onclick="">Cartão</button>
+                <button onclick="">Dinheiro</button>
+            </div>
+                
+            <br />
+
+            @*Tipo de cartao*@
+            <select>
+                <option value="depito">Débito</option>
+                <option value="credito">Crédito</option>
+            </select>
+
+            @*Bandeiras*@
+            <select>
+                <option value="mastercard">MASTERCARD</option>
+                <option value="elo">ELO</option>
+                <option value="maestro">MAESTRO</option>
+                <option value="visa">VISA</option>
+            </select>
+              
+            <br />
+            <br />
+           @*Caso necessario*@
+        @*<select>
+            <option value="dinheiro">Dinheiro</option>
+        </select>*@
+
+
+            @*precisa de trocooo/quantidade*@
+        <input id="rbTroco" type="radio" />
+        <label>Precisa de troco</label>
+            <br />
+            <input class="txtDinheiro" type="text" onFocus="change()" onBlur="changeBack()" name="txtDinheiro" placeholder="Voce precisa de troco para quanto?" required id="txtDinheiro">
+
+            <br />
+            <br />
+
+            <button onclick="alert('Obrigado! Compre sempre conosco')"> Finalizar compra </button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
